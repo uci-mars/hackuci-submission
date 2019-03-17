@@ -1,33 +1,68 @@
+body {
+  background-image: linear-gradient(to right, #2a2a2a, #191919);
+}
+
 .App {
   text-align: center;
-}
+  font-family: "Open Sans", sans-serif;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+.Feedback{
+  background-color: #e7e7e7;
+  padding: 30px 30px 30px 30px;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  font-weight: bold;
+  color: #bb8ce5;
+}
+
+
+.textField{
+  margin-bottom: 8px;
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  width: 500px;
+}
+
+
+.textBox{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  margin-top: 2px;
+  padding-left: 10px;
+
+}
+
+.textBox + p {
+  color: gray;
+  height: 0px;
+  padding: 2px 2px;
+  text-align: left;
+  font-size: 14px;
+
+}
+
+.submitButton {
+  margin-top: 15px;
+  background-color: #d3a1ff;
+  border: 0px;
+  width: 500px;
+}
+
+.submitButton:hover {
+  background-color: #ddbeff;
 }
