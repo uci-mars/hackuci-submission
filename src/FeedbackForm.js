@@ -16,8 +16,23 @@ class FeedbackForm extends Component {
     }
 
     submit(){
+        (async () => {
+            const rawResponse = await fetch('https://tranquil-lowlands-24043.herokuapp.com/feedback', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state)
+            });
+            const content = await rawResponse.json();
+
+            console.log(content);
+        })();
+
+
         this.setState({isSubmitted: true});
-        console.log(this.state);
+
     }
 
     render() {
@@ -72,7 +87,7 @@ class FeedbackForm extends Component {
             return (
                 <div className="FeedbackForm">
                     <h1 className="title">Feedback</h1>
-                    <p className='thankyou'>Thank you for your feedback! <span role='img'
+                    <p className="thankyou">Thank you for your feedback! <span role='img'
                                                                                aria-label="Smiling face">🙂</span></p>
                 </div>
             );
