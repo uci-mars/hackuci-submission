@@ -15,16 +15,21 @@ body {
 
 }
 
+.thankyou{
+  font-size: 16px;
+}
 
-.Feedback{
+.FeedbackForm{
   background-color: #e7e7e7;
   padding: 30px 30px 30px 30px;
   border-radius: 5px;
 }
 
+
 .title {
   font-weight: bold;
   color: #bb8ce5;
+  padding-bottom: 5px;
 }
 
 

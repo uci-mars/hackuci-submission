@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form'
 
 class TextBox extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            count: 0,
-            maxCount: 500,
-        };
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange(event) {
+        const text = event.target.value;
+        this.props.onChange(this.props.id, text);
+    }
+
     render() {
         return (
-            <div>
-                <textarea
-                       className='textBox form-control'
-                       name={this.props.name}
-                       placeholder={this.props.placeholder}
-                       rows="3"
-                       required
-                />
-                <p>{this.state.count}&#47;{this.state.maxCount}</p>
-            </div>
+            <Form.Control as="textarea" className='textBox' rows="3"
+                          placeholder={this.props.placeholder}
+                          maxLength={500}
+                          onChange={this.handleChange}
+                          value={this.props.value}
+                          required/>
+
 
         );
     }
