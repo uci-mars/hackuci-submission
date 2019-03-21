@@ -15,7 +15,8 @@ class FeedbackForm extends Component {
         this.setState({[fieldId]: value });
     }
 
-    submit(){
+    submit(e){
+        e.preventDefault();
         (async () => {
             const rawResponse = await fetch('https://tranquil-lowlands-24043.herokuapp.com/feedback', {
                 method: 'POST',
@@ -28,20 +29,16 @@ class FeedbackForm extends Component {
             const content = await rawResponse.json();
 
             console.log(content);
+            alert('Thank you for your feedback!');
         })();
-
-
-        this.setState({isSubmitted: true});
 
     }
 
     render() {
-        if (!this.state.isSubmitted) {
-
             return(
                 <div className="FeedbackForm">
                     <h1 className="title">Feedback</h1>
-                    <Form onSubmit={() => this.submit()}>
+                    <Form onSubmit={(e) => this.submit(e)}>
 
                         <TextField
                             key='first'
@@ -83,15 +80,7 @@ class FeedbackForm extends Component {
                     </Form>
                 </div>
             );
-        } else {
-            return (
-                <div className="FeedbackForm">
-                    <h1 className="title">Feedback</h1>
-                    <p className="thankyou">Thank you for your feedback! <span role='img'
-                                                                               aria-label="Smiling face">🙂</span></p>
-                </div>
-            );
-        }
+
     };
 }
 

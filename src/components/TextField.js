@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 
 class TextField extends Component {
-
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
